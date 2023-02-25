@@ -1,4 +1,4 @@
-package com.example.runworkshop
+package com.example.runworkshop.view
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

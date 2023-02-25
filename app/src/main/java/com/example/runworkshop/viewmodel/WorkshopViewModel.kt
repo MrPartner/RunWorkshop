@@ -1,4 +1,6 @@
 package com.example.runworkshop.viewmodel
 
-class WorkshopViewModel {
+import androidx.lifecycle.ViewModel
+
+class WorkshopViewModel :ViewModel(){
 }
