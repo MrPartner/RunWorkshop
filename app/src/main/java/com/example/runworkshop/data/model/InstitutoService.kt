@@ -6,6 +6,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response
 
+//Esta clase nos hace el llamado a retrofit para devolvernos el listado de la API
 class InstitutoService {
 
     private val retrofit = RetrofitHelper.getRetrofit()

@@ -24,15 +24,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         retrofit = getRetrofit()
-        initUI()
+
+        insViewModel.onCreate()
 
         insViewModel.insModel.observe(this, Observer {
             binding.tvInsitutos.text = it.note
         })
-    }
-
-    private fun initUI() {
-
     }
 
 }

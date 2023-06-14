@@ -2,6 +2,7 @@ package com.example.runworkshop.data.model
 
 import com.google.gson.annotations.SerializedName
 
+//El modelo de la peticion json a convertir
 data class InstitutoModel(
         @SerializedName("id") val id: Int,
         @SerializedName("note") val note: String,
