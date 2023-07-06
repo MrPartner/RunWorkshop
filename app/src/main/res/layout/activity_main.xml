@@ -8,8 +8,8 @@
     android:background="@color/orange"
     tools:context=".ui.view.MainActivity">
 
-    <TextView
-        android:id="@+id/tvInsitutos"
+    <Button
+        android:id="@+id/btnInstitutos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,25 +20,25 @@
         android:textAlignment="center"
         android:padding="24dp"
         tools:text="Institutos" />
-    <TextView
-        android:id="@+id/tvUniversidades"
+    <Button
+        android:id="@+id/btnUniversidades"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvInsitutos"
+        app:layout_constraintTop_toBottomOf="@+id/btnInstitutos"
         android:textStyle="bold"
         android:textSize="24sp"
         android:textAlignment="center"
         android:padding="24dp"
         tools:text="Universidades" />
-    <TextView
-        android:id="@+id/tvConsultoras"
+    <Button
+        android:id="@+id/btnConsultoras"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUniversidades"
+        app:layout_constraintTop_toBottomOf="@+id/btnUniversidades"
         android:textStyle="bold"
         android:textSize="24sp"
         android:textAlignment="center"

@@ -1,36 +1,37 @@
 package com.example.runworkshop.ui.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import com.example.runworkshop.R
+import com.example.runworkshop.core.RetrofitHelper
 import com.example.runworkshop.core.RetrofitHelper.getRetrofit
+import com.example.runworkshop.databinding.ActivityInstitutosBinding
 import com.example.runworkshop.databinding.ActivityMainBinding
-import com.example.runworkshop.data.model.InstitutoModel
 import com.example.runworkshop.ui.viewmodel.InstitutoViewModel
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
-class MainActivity : AppCompatActivity() {
+class InstitutosActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityInstitutosBinding
     private lateinit var retrofit: Retrofit
+
+    private val insViewModel : InstitutoViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityInstitutosBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         retrofit = getRetrofit()
 
-        binding.btnInstitutos.setOnClickListener { navigateToInstitutosActivity() }
-    }
+        insViewModel.onCreate()
 
-    private fun navigateToInstitutosActivity() {
-        val intent = Intent(this, InstitutosActivity::class.java)
-        startActivity(intent)
-    }
+       /* insViewModel.insModel.observe(this, Observer {
+             binding.tvInsitutos.text = it.note
+         })*/
 
+    }
 }
-
