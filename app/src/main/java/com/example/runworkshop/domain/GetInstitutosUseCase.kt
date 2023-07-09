@@ -9,6 +9,6 @@ class GetInstitutosUseCase {
     private val repository = InstitutoRepository()
 
     suspend operator fun invoke():List<InstitutoModel>?{
-        return repository.getAllNotes()
+        return repository.getAllInstitutos()
     }
 }

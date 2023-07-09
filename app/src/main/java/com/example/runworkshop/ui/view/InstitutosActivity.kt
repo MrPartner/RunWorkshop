@@ -30,7 +30,7 @@ class InstitutosActivity : AppCompatActivity() {
             binding.rvInstitutos.text = it.note
         })*/
 
-        //insViewModel.onCreate()
+        insViewModel.onCreate()
 
 
 

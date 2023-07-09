@@ -7,14 +7,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response
 
-//Esta clase nos hace el llamado a retrofit para devolvernos el listado de la API
+//Esta clase nos hace el llamado a internet
 class InstitutoService {
 
     private val retrofit = RetrofitHelper.getRetrofit()
 
-    suspend fun getInstituto(query: String): List<InstitutoModel> {
+    suspend fun getInstituto(): List<InstitutoModel> {
         return withContext(Dispatchers.IO) {
-            val response = retrofit.create(InstitutoApiClient::class.java).getAllNotes(query)
+            val response = retrofit.create(InstitutoApiClient::class.java).getAllInstitutos()
             response.body() ?: emptyList()
         }
 

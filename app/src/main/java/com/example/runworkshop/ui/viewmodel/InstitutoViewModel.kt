@@ -17,7 +17,7 @@ class InstitutoViewModel :ViewModel() {
             val result = getInstitutosUseCase()
 
             if(!result.isNullOrEmpty()){
-                insModel.postValue(result[1])
+                insModel.postValue(result[0])
             }
         }
     }
