@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orange"
+    android:padding="8dp"
     tools:context=".ui.view.MainActivity">
 
     <Button
@@ -15,11 +16,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="8dp"
         android:textStyle="bold"
         android:textSize="24sp"
         android:textAlignment="center"
         android:padding="24dp"
-        tools:text="Institutos" />
+        android:text="INSTITUTOS"/>
     <Button
         android:id="@+id/btnUniversidades"
         android:layout_width="match_parent"
@@ -27,11 +29,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnInstitutos"
+        android:layout_margin="8dp"
         android:textStyle="bold"
         android:textSize="24sp"
         android:textAlignment="center"
         android:padding="24dp"
-        tools:text="Universidades" />
+        android:text="UNIVERSIDADES"/>
     <Button
         android:id="@+id/btnConsultoras"
         android:layout_width="match_parent"
@@ -39,10 +42,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnUniversidades"
+        android:layout_margin="8dp"
         android:textStyle="bold"
         android:textSize="24sp"
         android:textAlignment="center"
         android:padding="24dp"
-        tools:text="Consultoras" />
+        android:text="CONSULTORAS"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,5 +7,5 @@ import retrofit2.http.GET
 //Esta interfaz nos sirve para hacer el request GET a internet
 interface InstitutoApiClient {
     @GET("/notes")
-    suspend fun getAllNotes():Response<List<InstitutoModel>>
+    suspend fun getAllNotes(query: String):Response<List<InstitutoModel>>
 }

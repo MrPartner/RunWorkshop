@@ -17,21 +17,26 @@ class InstitutosActivity : AppCompatActivity() {
     private lateinit var binding: ActivityInstitutosBinding
     private lateinit var retrofit: Retrofit
 
-    private val insViewModel : InstitutoViewModel by viewModels()
+    private val insViewModel: InstitutoViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityInstitutosBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         retrofit = getRetrofit()
+        initUI()
 
-        insViewModel.onCreate()
+        /*insViewModel.insModel.observe(this, Observer {
+            binding.rvInstitutos.text = it.note
+        })*/
 
-       /* insViewModel.insModel.observe(this, Observer {
-             binding.tvInsitutos.text = it.note
-         })*/
+        //insViewModel.onCreate()
 
+
+
+    }
+
+    private fun initUI() {
+        binding.rvInstitutos
     }
 }

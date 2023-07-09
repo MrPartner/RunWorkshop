@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 class InstitutoViewModel :ViewModel() {
 
-    val insModel = MutableLiveData<InstitutoModel>()
+    private val insModel = MutableLiveData<InstitutoModel>()
 
     var getInstitutosUseCase = GetInstitutosUseCase()
     fun onCreate() {

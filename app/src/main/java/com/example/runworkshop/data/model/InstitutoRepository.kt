@@ -7,7 +7,7 @@ class InstitutoRepository {
     private val api = InstitutoService()
 
     suspend fun getAllNotes():List<InstitutoModel>{
-        val response = api.getInstituto()
+        val response = api.getInstituto(query = String())
         InstitutoProvider.institutos = response
         return response
     }
