@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.runworkshop.R
 import com.example.runworkshop.core.RetrofitHelper
 import com.example.runworkshop.core.RetrofitHelper.getRetrofit
@@ -56,6 +57,9 @@ class InstitutosActivity : AppCompatActivity() {
                     val response = myResponse.body()
                     if(response != null){
                         Log.i("DanielParada", response.toString())
+                        runOnUiThread {
+                            adapter.updateList(response)
+                        }
                     }
                 } else {
                     Log.i("DanielParada", "No funciona :(")
@@ -65,6 +69,8 @@ class InstitutosActivity : AppCompatActivity() {
 
         adapter = InstitutoAdapter()
         binding.rvInstitutos.setHasFixedSize(true)
+        binding.rvInstitutos.layoutManager = LinearLayoutManager(this)
+        binding.rvInstitutos.adapter = adapter
     }
 }
 //Como creamos un test de consumo con Log

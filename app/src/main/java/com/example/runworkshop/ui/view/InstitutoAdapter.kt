@@ -9,9 +9,14 @@ import com.example.runworkshop.data.model.InstitutoModel
 
 class InstitutoAdapter(var institutoList: List<InstitutoModel> = emptyList()) :
     RecyclerView.Adapter<InstitutoViewHolder>() {
+
+    fun updateList(institutoList: List<InstitutoModel>){
+        this.institutoList = institutoList
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InstitutoViewHolder {
         return InstitutoViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.activity_institutos, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_rvinstituto, parent, false)
         )
     }
 
