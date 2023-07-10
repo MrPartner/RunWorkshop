@@ -9,6 +9,8 @@ import com.example.runworkshop.R
 import com.example.runworkshop.core.RetrofitHelper
 import com.example.runworkshop.core.RetrofitHelper.getRetrofit
 import com.example.runworkshop.data.model.InstitutoModel
+import com.example.runworkshop.data.model.InstitutoRepository
+import com.example.runworkshop.data.model.InstitutoService
 import com.example.runworkshop.data.model.network.InstitutoApiClient
 import com.example.runworkshop.databinding.ActivityInstitutosBinding
 import com.example.runworkshop.databinding.ActivityMainBinding
@@ -39,17 +41,19 @@ class InstitutosActivity : AppCompatActivity() {
 
         // insViewModel.onCreate()
 
-
     }
 
     private fun initUI() {
         binding.btnAPI.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
-                val myResponse: Response<List<InstitutoModel>> =
-                    retrofit.create(InstitutoApiClient::class.java).getAllInstitutos()
+                val myResponse: Response<List<InstitutoModel>> = retrofit.create(InstitutoApiClient::class.java).getAllInstitutos()
 
                 if (myResponse.isSuccessful) {
                     Log.i("DanielParada", "funciona :D")
+                    val response = myResponse.body()
+                    if(response != null){
+                        Log.i("DanielParada", response.toString())
+                    }
                 } else {
                     Log.i("DanielParada", "No funciona :(")
                 }
