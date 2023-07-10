@@ -25,6 +25,7 @@ class InstitutosActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInstitutosBinding
     private lateinit var retrofit: Retrofit
+    private lateinit var adapter: InstitutoAdapter
 
     private val insViewModel: InstitutoViewModel by viewModels()
 
@@ -35,6 +36,7 @@ class InstitutosActivity : AppCompatActivity() {
         retrofit = getRetrofit()
         initUI()
 
+
         /*insViewModel.insModel.observe(this, Observer {
             binding.rvInstitutos.text = it.note
         })*/
@@ -43,6 +45,7 @@ class InstitutosActivity : AppCompatActivity() {
 
     }
 
+    //Esta funcion nos hace el llamado al consumo de la API
     private fun initUI() {
         binding.btnAPI.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
@@ -59,5 +62,20 @@ class InstitutosActivity : AppCompatActivity() {
                 }
             }
         }
+
+        adapter = InstitutoAdapter()
+        binding.rvInstitutos.setHasFixedSize(true)
     }
 }
+//Como creamos un test de consumo con Log
+/*
+if (myResponse.isSuccessful) {
+                    Log.i("DanielParada", "funciona :D")
+                    val response = myResponse.body()
+                    if(response != null){
+                        Log.i("DanielParada", response.toString())
+                    }
+                } else {
+                    Log.i("DanielParada", "No funciona :(")
+                }
+ */
