@@ -10,5 +10,11 @@ class InstitutoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val binding = ItemRvinstitutoBinding.bind(view)
     fun bind(institutoModel: InstitutoModel) {
         binding.tvInstitutos.text = institutoModel.instituto
+        binding.tvDireccion.text = institutoModel.direccion
+        binding.tvTaller.text = institutoModel.taller
+        binding.tvDescripcion.text = institutoModel.descripcion
+        binding.tvCosto.text = institutoModel.costo
+        binding.tvFecha.text = institutoModel.fecha
+        binding.tvHora.text = institutoModel.hora
     }
 }
