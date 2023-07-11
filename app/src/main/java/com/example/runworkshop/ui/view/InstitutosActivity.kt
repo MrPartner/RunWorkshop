@@ -4,17 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.runworkshop.R
-import com.example.runworkshop.core.RetrofitHelper
 import com.example.runworkshop.core.RetrofitHelper.getRetrofit
 import com.example.runworkshop.data.model.InstitutoModel
-import com.example.runworkshop.data.model.InstitutoRepository
-import com.example.runworkshop.data.model.InstitutoService
 import com.example.runworkshop.data.model.network.InstitutoApiClient
 import com.example.runworkshop.databinding.ActivityInstitutosBinding
-import com.example.runworkshop.databinding.ActivityMainBinding
 import com.example.runworkshop.ui.viewmodel.InstitutoViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
