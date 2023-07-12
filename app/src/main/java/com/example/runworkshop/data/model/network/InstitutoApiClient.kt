@@ -4,7 +4,7 @@ import com.example.runworkshop.data.model.InstitutoModel
 import retrofit2.Response
 import retrofit2.http.GET
 
-//Esta interfaz nos sirve para hacer el request GET a internet
+//Esta interfaz hace el request GET a internet, el consumo de la API REST
 interface InstitutoApiClient {
     @GET("/runworkshop")
     suspend fun getAllInstitutos(): Response<List<InstitutoModel>>

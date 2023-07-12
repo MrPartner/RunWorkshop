@@ -1,7 +1,9 @@
 package com.example.runworkshop.data.model
 
-//Esta clase nos hace el llamado del caso de uso y ve de donde trae la informacion
-//en este caso la trae de retrofit con la API
+import com.example.runworkshop.data.model.network.InstitutoService
+
+//Esta clase se encarga de gestionar si accedemos a network o a database
+//En este caso la trae de internet a travez de la clase InstitutoService
 class InstitutoRepository {
 
     private val api = InstitutoService()

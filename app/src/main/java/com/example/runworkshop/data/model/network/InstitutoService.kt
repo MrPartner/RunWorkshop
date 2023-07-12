@@ -1,13 +1,15 @@
-package com.example.runworkshop.data.model
+package com.example.runworkshop.data.model.network
 
 
 import com.example.runworkshop.core.RetrofitHelper
-import com.example.runworkshop.data.model.network.InstitutoApiClient
+import com.example.runworkshop.data.model.InstitutoModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 
-//Esta clase nos hace el llamado a internet
+//Cuando el repositorio decide hacer el llamado por internet, lo hace a traves de esta clase service
+//Si en un futuro decidimos cambiar firebase, o retrofit, o los endpoint etc, solo modificamos esta clase,
+//porque esta clase es la dedicada a hacer la peticion  a internet
 class InstitutoService {
 
     private val retrofit = RetrofitHelper.getRetrofit()
