@@ -1,0 +1,52 @@
+package com.example.runworkshop.ui.view
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.runworkshop.core.RetrofitHelper
+import com.example.runworkshop.data.model.ConsultoraModel
+import com.example.runworkshop.data.model.network.ConsultoraApiClient
+import com.example.runworkshop.databinding.ActivityConsultorasBinding
+import com.example.runworkshop.ui.view.recyclerviews.ConsultoraAdapter
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Response
+import retrofit2.Retrofit
+
+class ConsultorasActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityConsultorasBinding
+    private lateinit var retrofit: Retrofit
+    private lateinit var adapter: ConsultoraAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityConsultorasBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        retrofit = RetrofitHelper.getRetrofit()
+
+        initUI()
+    }
+
+    private fun initUI() {
+        binding.btnConsultoras.setOnClickListener {
+            CoroutineScope(Dispatchers.IO).launch {
+                val myResponse: Response<List<ConsultoraModel>> =
+                    retrofit.create(ConsultoraApiClient::class.java).getAllConsultoras()
+                val response = myResponse.body()
+                if (response != null) {
+                    runOnUiThread {
+                        adapter.updateList(response)
+                    }
+                }
+            }
+        }
+
+        adapter = ConsultoraAdapter()
+        binding.rvConsultoras.setHasFixedSize(true)
+        binding.rvConsultoras.layoutManager = LinearLayoutManager(this)
+        binding.rvConsultoras.adapter = adapter
+    }
+}

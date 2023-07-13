@@ -16,6 +16,9 @@
         android:theme="@style/Theme.RunWorkshop"
         tools:targetApi="31">
         <activity
+            android:name=".ui.view.ConsultorasActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.view.UniversidadesActivity"
             android:exported="false" />
         <activity

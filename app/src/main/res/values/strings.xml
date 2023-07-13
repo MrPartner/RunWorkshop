@@ -8,6 +8,7 @@
     <string name="previous">Previous</string>
 
 
+
     //Strings para Institutos
     <string name="btnMainActIns">INSTITUTOS</string>
     <string name="textInstitutos">LISTAME LOS SEMINARIOS!</string>
@@ -18,6 +19,8 @@
     <string name="textUniversidades">LISTAME LOS SEMINARIOS!</string>
 
     //Strings para consultoras
+    <string name="btnMainActCon">CONSULTORAS</string>
+    <string name="textConsultoras">LISTAME LOS SEMINARIOS!</string>
 
 
 </resources>

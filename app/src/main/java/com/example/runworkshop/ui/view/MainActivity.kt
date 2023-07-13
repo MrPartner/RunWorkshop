@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnInstitutos.setOnClickListener { navigateToInstitutosActivity() }
         binding.btnUniversidades.setOnClickListener { navigateToUniversidadesActivity() }
+        binding.btnConsultoras.setOnClickListener { navigateToConsultorasActivity() }
 
     }
 
@@ -36,6 +37,10 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun navigateToConsultorasActivity() {
+        val intent = Intent(this, UniversidadesActivity::class.java)
+        startActivity(intent)
+    }
 
 }
 

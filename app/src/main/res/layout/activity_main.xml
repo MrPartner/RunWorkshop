@@ -47,6 +47,6 @@
         android:textSize="24sp"
         android:textAlignment="center"
         android:padding="24dp"
-        android:text="CONSULTORAS"/>
+        android:text="@string/btnMainActCon"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
