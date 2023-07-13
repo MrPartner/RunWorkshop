@@ -5,7 +5,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 //Este objeto nos sirve para hacer el llamado a retrofit
 object RetrofitHelper {
-
     fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("http://192.168.1.2:8080/")

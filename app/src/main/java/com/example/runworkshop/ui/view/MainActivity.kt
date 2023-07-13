@@ -22,12 +22,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnInstitutos.setOnClickListener { navigateToInstitutosActivity() }
+        binding.btnUniversidades.setOnClickListener { navigateToUniversidadesActivity() }
+
     }
 
     private fun navigateToInstitutosActivity() {
         val intent = Intent(this, InstitutosActivity::class.java)
         startActivity(intent)
     }
+
+    private fun navigateToUniversidadesActivity() {
+        val intent = Intent(this, UniversidadesActivity::class.java)
+        startActivity(intent)
+    }
+
 
 }
 

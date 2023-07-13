@@ -21,7 +21,7 @@
         android:textSize="24sp"
         android:textAlignment="center"
         android:padding="24dp"
-        android:text="INSTITUTOS"/>
+        android:text="@string/btnMainActIns"/>
     <Button
         android:id="@+id/btnUniversidades"
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
         android:textSize="24sp"
         android:textAlignment="center"
         android:padding="24dp"
-        android:text="UNIVERSIDADES"/>
+        android:text="@string/btnMainActUni"/>
     <Button
         android:id="@+id/btnConsultoras"
         android:layout_width="match_parent"

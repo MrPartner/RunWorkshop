@@ -2,14 +2,12 @@ package com.example.runworkshop.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.runworkshop.core.RetrofitHelper.getRetrofit
 import com.example.runworkshop.data.model.InstitutoModel
 import com.example.runworkshop.data.model.network.InstitutoApiClient
 import com.example.runworkshop.databinding.ActivityInstitutosBinding
-import com.example.runworkshop.ui.viewmodel.InstitutoViewModel
+import com.example.runworkshop.ui.view.recyclerviews.InstitutoAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,14 +26,15 @@ class InstitutosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityInstitutosBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        retrofit = getRetrofit()
-        initUI()
 
+        retrofit = getRetrofit()
+
+        initUI()
     }
 
     //Esta funcion nos hace el llamado al consumo de la API
     private fun initUI() {
-        binding.btnAPI.setOnClickListener {
+        binding.btnInstitutos.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 val myResponse: Response<List<InstitutoModel>> =
                     retrofit.create(InstitutoApiClient::class.java).getAllInstitutos()

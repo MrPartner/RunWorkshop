@@ -1,4 +1,4 @@
-package com.example.runworkshop.ui.view
+package com.example.runworkshop.ui.view.recyclerviews
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
