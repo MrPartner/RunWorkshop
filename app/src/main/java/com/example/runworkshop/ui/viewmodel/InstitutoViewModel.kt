@@ -11,6 +11,7 @@ class InstitutoViewModel :ViewModel() {
 
     private val insModel = MutableLiveData<InstitutoModel>()
 
+    /*
     var getInstitutosUseCase = GetInstitutosUseCase()
     fun onCreate() {
         viewModelScope.launch {
@@ -20,5 +21,5 @@ class InstitutoViewModel :ViewModel() {
                 insModel.postValue(result[0])
             }
         }
-    }
+    }*/
 }

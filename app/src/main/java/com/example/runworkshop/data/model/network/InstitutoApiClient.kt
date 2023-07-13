@@ -8,4 +8,5 @@ import retrofit2.http.GET
 interface InstitutoApiClient {
     @GET("/runworkshop")
     suspend fun getAllInstitutos(): Response<List<InstitutoModel>>
+
 }

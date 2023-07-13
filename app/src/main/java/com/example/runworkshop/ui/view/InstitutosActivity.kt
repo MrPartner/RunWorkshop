@@ -22,7 +22,7 @@ class InstitutosActivity : AppCompatActivity() {
     private lateinit var retrofit: Retrofit
     private lateinit var adapter: InstitutoAdapter
 
-    private val insViewModel: InstitutoViewModel by viewModels()
+    //private val insViewModel: InstitutoViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,12 +31,6 @@ class InstitutosActivity : AppCompatActivity() {
         retrofit = getRetrofit()
         initUI()
 
-
-        /*insViewModel.insModel.observe(this, Observer {
-            binding.rvInstitutos.text = it.note
-        })*/
-
-        // insViewModel.onCreate()
 
     }
 
