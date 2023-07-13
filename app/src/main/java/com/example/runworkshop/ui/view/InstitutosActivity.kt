@@ -31,30 +31,22 @@ class InstitutosActivity : AppCompatActivity() {
         retrofit = getRetrofit()
         initUI()
 
-
     }
 
     //Esta funcion nos hace el llamado al consumo de la API
     private fun initUI() {
         binding.btnAPI.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
-                val myResponse: Response<List<InstitutoModel>> = retrofit.create(InstitutoApiClient::class.java).getAllInstitutos()
-
-                if (myResponse.isSuccessful) {
-                    Log.i("DanielParada", "funciona :D")
-                    val response = myResponse.body()
-                    if(response != null){
-                        Log.i("DanielParada", response.toString())
-                        runOnUiThread {
-                            adapter.updateList(response)
-                        }
+                val myResponse: Response<List<InstitutoModel>> =
+                    retrofit.create(InstitutoApiClient::class.java).getAllInstitutos()
+                val response = myResponse.body()
+                if (response != null) {
+                    runOnUiThread {
+                        adapter.updateList(response)
                     }
-                } else {
-                    Log.i("DanielParada", "No funciona :(")
                 }
             }
         }
-
         adapter = InstitutoAdapter()
         binding.rvInstitutos.setHasFixedSize(true)
         binding.rvInstitutos.layoutManager = LinearLayoutManager(this)
@@ -63,13 +55,16 @@ class InstitutosActivity : AppCompatActivity() {
 }
 //Como creamos un test de consumo con Log
 /*
-if (myResponse.isSuccessful) {
-                    Log.i("DanielParada", "funciona :D")
+//  if (myResponse.isSuccessful) {
+                 //   Log.i("DanielParada", "funciona :D")
                     val response = myResponse.body()
                     if(response != null){
-                        Log.i("DanielParada", response.toString())
+                     //   Log.i("DanielParada", response.toString())
+                        runOnUiThread {
+                            adapter.updateList(response)
+                        }
                     }
-                } else {
-                    Log.i("DanielParada", "No funciona :(")
-                }
+             //   } else {
+                  //  Log.i("DanielParada", "No funciona :(")
+              //  }
  */
