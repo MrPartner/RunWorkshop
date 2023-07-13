@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navigateToConsultorasActivity() {
-        val intent = Intent(this, UniversidadesActivity::class.java)
+        val intent = Intent(this, ConsultorasActivity::class.java)
         startActivity(intent)
     }
 
