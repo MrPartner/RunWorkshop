@@ -12,6 +12,7 @@ class ConsultoraViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     fun bind(consultoraModel: ConsultoraModel) {
         binding.tvConsultoras.text = consultoraModel.consultora
         binding.tvDireccion.text = consultoraModel.direccion
+        binding.tvAudiencia.text = consultoraModel.audiencia
         binding.tvTaller.text = consultoraModel.taller
         binding.tvDescripcion.text = consultoraModel.descripcion
         binding.tvCosto.text = consultoraModel.costo

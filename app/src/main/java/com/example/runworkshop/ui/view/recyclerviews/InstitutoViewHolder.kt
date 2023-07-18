@@ -11,6 +11,7 @@ class InstitutoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     fun bind(institutoModel: InstitutoModel) {
         binding.tvInstitutos.text = institutoModel.instituto
         binding.tvDireccion.text = institutoModel.direccion
+        binding.tvAudiencia.text = institutoModel.audiencia
         binding.tvTaller.text = institutoModel.taller
         binding.tvDescripcion.text = institutoModel.descripcion
         binding.tvCosto.text = institutoModel.costo

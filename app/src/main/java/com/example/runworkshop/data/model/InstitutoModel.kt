@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName
 data class InstitutoModel(
     @SerializedName("instituto") val instituto: String,
     @SerializedName("direccion") val direccion: String,
+    @SerializedName("audiencia") val audiencia: String,
     @SerializedName("taller") val taller: String,
     @SerializedName("descripcion") val descripcion: String,
     @SerializedName("costo") val costo: String,

@@ -13,6 +13,7 @@ class UniversidadViewHolder(view:View) : RecyclerView.ViewHolder(view) {
     fun bind(universidadModel: UniversidadModel) {
         binding.tvUniversidades.text = universidadModel.universidad
         binding.tvDireccion.text = universidadModel.direccion
+        binding.tvAudiencia.text = universidadModel.audiencia
         binding.tvTaller.text = universidadModel.taller
         binding.tvDescripcion.text = universidadModel.descripcion
         binding.tvCosto.text = universidadModel.costo
