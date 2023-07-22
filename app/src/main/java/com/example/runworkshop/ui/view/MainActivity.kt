@@ -1,8 +1,10 @@
 package com.example.runworkshop.ui.view
 
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.runworkshop.R
 import com.example.runworkshop.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
@@ -12,6 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.blue)))
 
         binding.btnInstitutos.setOnClickListener { navigateToInstitutosActivity() }
         binding.btnUniversidades.setOnClickListener { navigateToUniversidadesActivity() }

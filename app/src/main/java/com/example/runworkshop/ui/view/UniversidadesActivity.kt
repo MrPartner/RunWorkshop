@@ -1,8 +1,10 @@
 package com.example.runworkshop.ui.view
 
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.runworkshop.R
 import com.example.runworkshop.core.RetrofitHelper
 import com.example.runworkshop.data.model.UniversidadModel
 import com.example.runworkshop.data.model.network.UniversidadApiClient
@@ -24,6 +26,8 @@ class UniversidadesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityUniversidadesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.blue)))
 
         retrofit = RetrofitHelper.getRetrofit()
 

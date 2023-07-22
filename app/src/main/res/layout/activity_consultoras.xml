@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orangerw"
-    tools:context=".ui.view.InstitutosActivity">
+    tools:context=".ui.view.ConsultorasActivity">
 
     <Button
         android:id="@+id/btnConsultoras"
