@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "456478651690",
+    "project_id": "runworkshopkotlinfirebase",
+    "storage_bucket": "runworkshopkotlinfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456478651690:android:7ff69d119e66fa53db1a53",
+        "android_client_info": {
+          "package_name": "com.example.runworkshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456478651690-3f2mfq8o85qa3tjqltht5qmgft15dsn6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhjes6s7Nmj47EnFg-N1z4SgbKvFJRGEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456478651690-3f2mfq8o85qa3tjqltht5qmgft15dsn6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
