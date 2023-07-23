@@ -20,5 +20,13 @@
     <string name="btnMainActCon">CONSULTORAS</string>
     <string name="textConsultoras">LISTAME LOS SEMINARIOS!</string>
 
+    //Strings para login
+    <string name="etEmail">Email</string>
+    <string name="etPassword">Password</string>
+    <string name="btnSignUp">Registrar</string>
+    <string name="btnLogin">Acceder</string>
+    <string name="btnCerrarSesion">Cerrar Sesion</string>
+
+
 
 </resources>
