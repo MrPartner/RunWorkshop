@@ -7,7 +7,6 @@ import android.os.Bundle
 import com.example.runworkshop.R
 import com.example.runworkshop.databinding.ActivityMainBinding
 import com.example.runworkshop.ui.view.auths.AuthActivity
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
@@ -19,15 +18,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize Firebase
-        FirebaseApp.initializeApp(this)
-
         //setup
         val bundle = intent.extras
         val email = bundle?.getString("email")
         val provider = bundle?.getString("provider")
         setup(email ?: "", provider ?: "")
-
 
         supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.blue)))
 
@@ -46,7 +41,6 @@ class MainActivity : AppCompatActivity() {
             navigateToAuthActivity()
         }
     }
-
 
     private fun navigateToInstitutosActivity() {
         val intent = Intent(this, InstitutosActivity::class.java)
