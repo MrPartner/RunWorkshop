@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.runworkshop.R
 import com.example.runworkshop.databinding.ActivityMainBinding
+import com.example.runworkshop.ui.view.auths.AuthActivity
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Initialize Firebase
+        FirebaseApp.initializeApp(this)
 
         //setup
         val bundle = intent.extras
@@ -38,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         binding.tvProvider.text = provider
         binding.btnCerrarSesion.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-            onBackPressed()
+            navigateToAuthActivity()
         }
     }
 
@@ -58,6 +63,10 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun navigateToAuthActivity() {
+        val intent = Intent(this, AuthActivity::class.java)
+        startActivity(intent)
+    }
 
     enum class ProviderType{
         BASIC

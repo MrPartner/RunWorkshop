@@ -1,4 +1,4 @@
-package com.example.runworkshop.ui.view
+package com.example.runworkshop.ui.view.auths
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.runworkshop.databinding.ActivityAuthBinding
+import com.example.runworkshop.ui.view.MainActivity
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 
 class AuthActivity : AppCompatActivity() {
@@ -16,6 +18,9 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Initialize Firebase
+        FirebaseApp.initializeApp(this)
 
         //setup, autenticacion
         setup()
@@ -31,9 +36,13 @@ class AuthActivity : AppCompatActivity() {
                     binding.etEmail.text.toString(),
                     binding.etPassword.text.toString()
                 ).addOnCompleteListener {
-                    if (it.isSuccessful){
-                        Toast.makeText(this, "USUARIO REGISTRADO SATISFACTORIAMENTE", Toast.LENGTH_LONG).show()
-                    }else{
+                    if (it.isSuccessful) {
+                        Toast.makeText(
+                            this,
+                            "USUARIO REGISTRADO SATISFACTORIAMENTE",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    } else {
                         showAlert()
                     }
                 }
@@ -46,10 +55,13 @@ class AuthActivity : AppCompatActivity() {
                     binding.etEmail.text.toString(),
                     binding.etPassword.text.toString()
                 ).addOnCompleteListener {
-                    if (it.isSuccessful){
-                        navigateToMainActivity(it.result?.user?.email ?: "", MainActivity.ProviderType.BASIC)
-                    }else{
-                        Toast.makeText(this, "ERROR AL INGRESAR, COMPRUEBE SUS DATOS", Toast.LENGTH_LONG).show()
+                    if (it.isSuccessful) {
+                        navigateToMainActivity(
+                            it.result?.user?.email ?: "",
+                            MainActivity.ProviderType.BASIC
+                        )
+                    } else {
+                        showAlert()
                     }
                 }
             }
@@ -58,7 +70,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     //funcion en caso de que haya error en el login btnSignUp
-    private fun showAlert(){
+    private fun showAlert() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
         builder.setMessage("Se ha producido un error autenticando al usuario")
@@ -68,7 +80,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
 
-    private fun navigateToMainActivity(email:String, provider: MainActivity.ProviderType) {
+    private fun navigateToMainActivity(email: String, provider: MainActivity.ProviderType) {
         val sesionIntent = Intent(this, MainActivity::class.java).apply {
             putExtra("email", email)
             putExtra("provider", provider.name)
