@@ -26,6 +26,9 @@
     <string name="btnSignUp">Registrar</string>
     <string name="btnLogin">Acceder</string>
     <string name="btnCerrarSesion">Cerrar Sesion</string>
+    <string name="tvIniciarSesion">INICIAR SESION</string>
+    <string name="tvRegistrar">No eres miembro todavia?</string>
+    <string name="cbRecordarme">Recordarme</string>
 
 
 
