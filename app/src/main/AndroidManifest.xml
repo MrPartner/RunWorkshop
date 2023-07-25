@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RunWorkshop"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.view.auths.RegistroActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.view.auths.AuthActivity"
             android:exported="false" />

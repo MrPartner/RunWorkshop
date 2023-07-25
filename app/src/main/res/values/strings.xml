@@ -27,9 +27,9 @@
     <string name="btnLogin">Acceder</string>
     <string name="btnCerrarSesion">Cerrar Sesion</string>
     <string name="tvIniciarSesion">INICIAR SESION</string>
-    <string name="tvRegistrar">No eres miembro todavia?</string>
+    <string name="tvRegistrar">No eres miembro todavía?</string>
     <string name="cbRecordarme">Recordarme</string>
-
+    <string name="tvRegistrarActivity">REGISTRO</string>
 
 
 </resources>

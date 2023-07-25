@@ -22,7 +22,7 @@ class AuthActivity : AppCompatActivity() {
         // Initialize Firebase
         FirebaseApp.initializeApp(this)
 
-        //setup, autenticacion
+        //llamamos a la funcion setup
         setup()
     }
 
@@ -31,22 +31,7 @@ class AuthActivity : AppCompatActivity() {
         title = "Inicio"
 
         binding.btnRegistrar.setOnClickListener {
-            if (binding.etEmail.text.isNotEmpty() && binding.etPassword.text.isNotEmpty()) {
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(
-                    binding.etEmail.text.toString(),
-                    binding.etPassword.text.toString()
-                ).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        Toast.makeText(
-                            this,
-                            "USUARIO REGISTRADO SATISFACTORIAMENTE",
-                            Toast.LENGTH_LONG
-                        ).show()
-                    } else {
-                        showAlert()
-                    }
-                }
-            }
+            startActivity(Intent(this, RegistroActivity::class.java))
         }
 
         binding.btnAcceder.setOnClickListener {
