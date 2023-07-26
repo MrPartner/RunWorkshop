@@ -63,7 +63,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     enum class ProviderType{
-        BASIC
+        BASIC,
+        GOOGLE
     }
 
 }

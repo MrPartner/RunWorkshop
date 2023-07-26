@@ -16,6 +16,9 @@
         android:theme="@style/Theme.RunWorkshop"
         tools:targetApi="31">
         <activity
+            android:name=".ui.viewmodel.LoginGoogleViewModel"
+            android:exported="false" />
+        <activity
             android:name=".ui.view.auths.RegistroActivity"
             android:exported="false" />
         <activity

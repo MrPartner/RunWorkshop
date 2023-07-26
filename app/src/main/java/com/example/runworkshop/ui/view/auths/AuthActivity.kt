@@ -3,10 +3,12 @@ package com.example.runworkshop.ui.view.auths
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.runworkshop.R
 import com.example.runworkshop.databinding.ActivityAuthBinding
 import com.example.runworkshop.ui.view.MainActivity
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 
@@ -24,6 +26,9 @@ class AuthActivity : AppCompatActivity() {
 
         //llamamos a la funcion setup
         setup()
+
+        //guardado de datos
+
     }
 
     //funcion de autenticacion
@@ -50,6 +55,10 @@ class AuthActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+
+        binding.btnGoogle.setOnClickListener {
+
         }
 
     }
