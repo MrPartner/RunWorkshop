@@ -30,6 +30,8 @@
     <string name="tvRegistrar">No eres miembro todavía?</string>
     <string name="cbRecordarme">Recordarme</string>
     <string name="tvRegistrarActivity">REGISTRO</string>
+    <string name="tvAccedeCon">O accede con:</string>
+    <string name="btnGoogle">GOOGLE</string>
 
 
 </resources>

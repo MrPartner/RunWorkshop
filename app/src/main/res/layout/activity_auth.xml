@@ -71,6 +71,31 @@
         app:layout_constraintTop_toBottomOf="@+id/cbRecordarme" />
 
     <TextView
+        android:id="@+id/tvAccedeCon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvAccedeCon"
+        app:layout_constraintTop_toBottomOf="@+id/btnAcceder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <Button
+        android:id="@+id/btnGoogle"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/invis"
+        android:drawableLeft="@drawable/googleg_standard_color_18"
+        android:minHeight="48dp"
+        android:text="@string/btnGoogle"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAccedeCon" />
+
+
+    <TextView
         android:id="@+id/tvRegistrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
