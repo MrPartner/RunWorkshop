@@ -8,13 +8,19 @@ import com.example.runworkshop.R
 import com.example.runworkshop.databinding.ActivityAuthBinding
 import com.example.runworkshop.ui.view.MainActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 
 class AuthActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAuthBinding
+    private lateinit var mGoogleSignInClient: GoogleSignInClient
+    private lateinit var mAuth: FirebaseAuth
+    private val RC_SIGN_IN = 9001
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,10 +64,27 @@ class AuthActivity : AppCompatActivity() {
         }
 
         binding.btnGoogle.setOnClickListener {
+            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build()
+
+            mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+            mAuth = FirebaseAuth.getInstance()
+            mGoogleSignInClient.signOut()
+
+            signInWithGoogle()
+
 
         }
 
     }
+
+    private fun signInWithGoogle() {
+        val signInIntent = mGoogleSignInClient.signInIntent
+        startActivityForResult(signInIntent, RC_SIGN_IN)
+    }
+
 
     //funcion en caso de que haya error en el login btnSignUp
     private fun showAlert() {
@@ -80,6 +103,35 @@ class AuthActivity : AppCompatActivity() {
             putExtra("provider", provider.name)
         }
         startActivity(sesionIntent)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == RC_SIGN_IN) {
+            // El inicio de sesión con Google fue exitoso, obtén la cuenta de Google
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                val account = task.getResult(ApiException::class.java)
+                if (account != null) {
+                    val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+                    FirebaseAuth.getInstance().signInWithCredential(credential)
+                        .addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                navigateToMainActivity(
+                                    account.email ?: "",
+                                    MainActivity.ProviderType.GOOGLE
+                                )
+                            } else {
+                                showAlert()
+                            }
+                        }
+
+                }
+            } catch (e: ApiException) {
+                showAlert()
+            }
+        }
     }
 
 
