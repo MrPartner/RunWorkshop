@@ -27,13 +27,11 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize Firebase
+        //Initialize Firebase
         FirebaseApp.initializeApp(this)
 
         //llamamos a la funcion setup
         setup()
-
-        //guardado de datos
 
     }
 
@@ -74,17 +72,15 @@ class AuthActivity : AppCompatActivity() {
             mGoogleSignInClient.signOut()
 
             signInWithGoogle()
-
-
         }
 
     }
 
+    //Funcion para el login de google
     private fun signInWithGoogle() {
         val signInIntent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
-
 
     //funcion en caso de que haya error en el login btnSignUp
     private fun showAlert() {
@@ -96,7 +92,7 @@ class AuthActivity : AppCompatActivity() {
         dialog.show()
     }
 
-
+    //funcion para navegar al MainActivity con parametros
     private fun navigateToMainActivity(email: String, provider: MainActivity.ProviderType) {
         val sesionIntent = Intent(this, MainActivity::class.java).apply {
             putExtra("email", email)
@@ -105,6 +101,7 @@ class AuthActivity : AppCompatActivity() {
         startActivity(sesionIntent)
     }
 
+    //Funcion para el login de google
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
