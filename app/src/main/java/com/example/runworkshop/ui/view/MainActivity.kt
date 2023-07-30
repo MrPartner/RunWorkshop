@@ -8,7 +8,9 @@ import com.example.runworkshop.R
 import com.example.runworkshop.databinding.ActivityMainBinding
 import com.example.runworkshop.ui.view.auths.AuthActivity
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
