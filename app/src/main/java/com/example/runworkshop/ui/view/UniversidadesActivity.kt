@@ -10,12 +10,13 @@ import com.example.runworkshop.data.model.UniversidadModel
 import com.example.runworkshop.data.model.network.UniversidadApiClient
 import com.example.runworkshop.databinding.ActivityUniversidadesBinding
 import com.example.runworkshop.ui.view.recyclerviews.UniversidadAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import retrofit2.Retrofit
-
+@AndroidEntryPoint
 class UniversidadesActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUniversidadesBinding

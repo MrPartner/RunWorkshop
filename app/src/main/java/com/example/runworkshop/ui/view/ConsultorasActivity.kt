@@ -10,12 +10,14 @@ import com.example.runworkshop.data.model.ConsultoraModel
 import com.example.runworkshop.data.model.network.ConsultoraApiClient
 import com.example.runworkshop.databinding.ActivityConsultorasBinding
 import com.example.runworkshop.ui.view.recyclerviews.ConsultoraAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import retrofit2.Retrofit
 
+@AndroidEntryPoint
 class ConsultorasActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityConsultorasBinding

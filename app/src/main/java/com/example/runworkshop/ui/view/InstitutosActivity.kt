@@ -10,12 +10,13 @@ import com.example.runworkshop.data.model.InstitutoModel
 import com.example.runworkshop.data.model.network.InstitutoApiClient
 import com.example.runworkshop.databinding.ActivityInstitutosBinding
 import com.example.runworkshop.ui.view.recyclerviews.InstitutoAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import retrofit2.Retrofit
-
+@AndroidEntryPoint
 class InstitutosActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInstitutosBinding
