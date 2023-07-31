@@ -8,6 +8,7 @@ import com.example.runworkshop.R
 import com.example.runworkshop.core.RetrofitHelper.getRetrofit
 import com.example.runworkshop.data.model.InstitutoModel
 import com.example.runworkshop.data.model.network.InstitutoApiClient
+import com.example.runworkshop.data.model.network.InstitutoService
 import com.example.runworkshop.databinding.ActivityInstitutosBinding
 import com.example.runworkshop.ui.view.recyclerviews.InstitutoAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,7 +25,6 @@ class InstitutosActivity : AppCompatActivity() {
     private lateinit var adapter: InstitutoAdapter
 
     //private val insViewModel: InstitutoViewModel by viewModels()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityInstitutosBinding.inflate(layoutInflater)
