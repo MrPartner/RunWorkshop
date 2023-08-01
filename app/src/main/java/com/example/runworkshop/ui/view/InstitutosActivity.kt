@@ -8,8 +8,8 @@ import com.example.runworkshop.R
 import com.example.runworkshop.core.RetrofitHelper.getRetrofit
 import com.example.runworkshop.data.model.InstitutoModel
 import com.example.runworkshop.data.model.network.InstitutoApiClient
-import com.example.runworkshop.data.model.network.InstitutoService
 import com.example.runworkshop.databinding.ActivityInstitutosBinding
+import com.example.runworkshop.di.NetworkModule.provideInstitutoApiClient
 import com.example.runworkshop.ui.view.recyclerviews.InstitutoAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -22,6 +22,7 @@ class InstitutosActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInstitutosBinding
     private lateinit var adapter: InstitutoAdapter
+    private lateinit var retrofit: Retrofit
     private lateinit var api:InstitutoApiClient
 
     //private val insViewModel: InstitutoViewModel by viewModels()
@@ -31,6 +32,9 @@ class InstitutosActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.blue)))
+
+        retrofit = getRetrofit()
+        api = provideInstitutoApiClient(retrofit)
 
         initUI()
     }

@@ -5,10 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.runworkshop.R
-import com.example.runworkshop.core.RetrofitHelper
+import com.example.runworkshop.core.RetrofitHelper.getRetrofit
 import com.example.runworkshop.data.model.UniversidadModel
 import com.example.runworkshop.data.model.network.UniversidadApiClient
 import com.example.runworkshop.databinding.ActivityUniversidadesBinding
+import com.example.runworkshop.di.NetworkModule.provideUniversidadApiClient
 import com.example.runworkshop.ui.view.recyclerviews.UniversidadAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -22,6 +23,8 @@ class UniversidadesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUniversidadesBinding
     private lateinit var api:UniversidadApiClient
     private lateinit var adapter: UniversidadAdapter
+    private lateinit var retrofit: Retrofit
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +32,9 @@ class UniversidadesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.blue)))
+
+        retrofit = getRetrofit()
+        api = provideUniversidadApiClient(retrofit)
 
         initUI()
     }
