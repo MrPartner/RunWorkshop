@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class GetInstitutosUseCase @Inject constructor(private val repository: InstitutoRepository) {
 
-    suspend operator fun invoke():List<Instituto>{
+    suspend operator fun invoke():List<Instituto>?{
         val institutos = repository.getAllInstitutosFromApi()
 
         return if (institutos.isNotEmpty()){

@@ -1,6 +1,8 @@
 package com.example.runworkshop.di
 
+import com.example.runworkshop.data.model.network.ConsultoraApiClient
 import com.example.runworkshop.data.model.network.InstitutoApiClient
+import com.example.runworkshop.data.model.network.UniversidadApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,7 +20,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit():Retrofit{
+    fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("http://192.168.1.7:9090/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -27,7 +29,19 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideInstitutoApiClient(retrofit: Retrofit):InstitutoApiClient{
+    fun provideInstitutoApiClient(retrofit: Retrofit): InstitutoApiClient {
         return retrofit.create(InstitutoApiClient::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideConsultoraApiClient(retrofit: Retrofit): ConsultoraApiClient {
+        return retrofit.create(ConsultoraApiClient::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideUniversidadApiClient(retrofit: Retrofit): UniversidadApiClient {
+        return retrofit.create(UniversidadApiClient::class.java)
     }
 }

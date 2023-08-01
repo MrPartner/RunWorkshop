@@ -20,7 +20,7 @@ import retrofit2.Retrofit
 class UniversidadesActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUniversidadesBinding
-    private lateinit var retrofit: Retrofit
+    private lateinit var api:UniversidadApiClient
     private lateinit var adapter: UniversidadAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,8 +30,6 @@ class UniversidadesActivity : AppCompatActivity() {
 
         supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.blue)))
 
-        retrofit = RetrofitHelper.getRetrofit()
-
         initUI()
     }
 
@@ -39,7 +37,7 @@ class UniversidadesActivity : AppCompatActivity() {
         binding.btnUniversidades.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 val myResponse: Response<List<UniversidadModel>> =
-                    retrofit.create(UniversidadApiClient::class.java).getAllUniversidades()
+                    api.getAllUniversidades()
                 val response = myResponse.body()
                 if (response != null) {
                     runOnUiThread {

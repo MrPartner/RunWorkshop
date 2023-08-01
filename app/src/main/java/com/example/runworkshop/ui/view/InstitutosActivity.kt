@@ -21,8 +21,8 @@ import retrofit2.Retrofit
 class InstitutosActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInstitutosBinding
-    private lateinit var retrofit: Retrofit
     private lateinit var adapter: InstitutoAdapter
+    private lateinit var api:InstitutoApiClient
 
     //private val insViewModel: InstitutoViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,8 +32,6 @@ class InstitutosActivity : AppCompatActivity() {
 
         supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.blue)))
 
-        retrofit = getRetrofit()
-
         initUI()
     }
 
@@ -42,7 +40,7 @@ class InstitutosActivity : AppCompatActivity() {
         binding.btnInstitutos.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 val myResponse: Response<List<InstitutoModel>> =
-                    retrofit.create(InstitutoApiClient::class.java).getAllInstitutos()
+                    api.getAllInstitutos()
                 val response = myResponse.body()
                 if (response != null) {
                     runOnUiThread {

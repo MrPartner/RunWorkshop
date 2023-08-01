@@ -19,4 +19,4 @@ fun InstitutoModel.toDomain() =
     Instituto(instituto, direccion, audiencia, taller, descripcion, costo, fecha, hora)
 
 fun InstitutoEntity.toDomain() =
-Instituto(instituto, direccion, audiencia, taller, descripcion, costo, fecha, hora)
+    Instituto(instituto, direccion, audiencia, taller, descripcion, costo, fecha, hora)

@@ -9,7 +9,7 @@ import com.example.runworkshop.data.model.database.entities.InstitutoEntity
 @Dao
 interface InstitutoDao {
 
-    @Query("SELECT * FROM institutos ORDER BY fecha")
+    @Query("SELECT * FROM institutos ORDER BY fecha DESC")
     suspend fun getAllInstitutos():List<InstitutoEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

@@ -21,7 +21,7 @@ import retrofit2.Retrofit
 class ConsultorasActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityConsultorasBinding
-    private lateinit var retrofit: Retrofit
+    private lateinit var api:ConsultoraApiClient
     private lateinit var adapter: ConsultoraAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,8 +31,6 @@ class ConsultorasActivity : AppCompatActivity() {
 
         supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.blue)))
 
-        retrofit = RetrofitHelper.getRetrofit()
-
         initUI()
     }
 
@@ -40,7 +38,7 @@ class ConsultorasActivity : AppCompatActivity() {
         binding.btnConsultoras.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 val myResponse: Response<List<ConsultoraModel>> =
-                    retrofit.create(ConsultoraApiClient::class.java).getAllConsultoras()
+                    api.getAllConsultoras()
                 val response = myResponse.body()
                 if (response != null) {
                     runOnUiThread {
