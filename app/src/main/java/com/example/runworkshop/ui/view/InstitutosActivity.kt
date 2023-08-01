@@ -17,15 +17,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import retrofit2.Retrofit
+
 @AndroidEntryPoint
 class InstitutosActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInstitutosBinding
     private lateinit var adapter: InstitutoAdapter
     private lateinit var retrofit: Retrofit
-    private lateinit var api:InstitutoApiClient
+    private lateinit var api: InstitutoApiClient
 
-    //private val insViewModel: InstitutoViewModel by viewModels()
+    //private val institutoViewModel : InstitutoViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityInstitutosBinding.inflate(layoutInflater)
@@ -35,6 +37,14 @@ class InstitutosActivity : AppCompatActivity() {
 
         retrofit = getRetrofit()
         api = provideInstitutoApiClient(retrofit)
+
+        //institutoViewModel.onCreate()
+
+
+        /*institutoViewModel.institutoModel.observe(this, Observer {
+
+        })*/
+
 
         initUI()
     }
