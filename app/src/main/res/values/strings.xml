@@ -18,7 +18,7 @@
     <string name="textUniversidades">LISTAME LOS SEMINARIOS!</string>
 
     //Strings para consultoras
-    <string name="btnMainActCon">CONSULTORAS</string>
+    <string name="btnMainActCon">CONSULTORAS/COACH</string>
     <string name="textConsultoras">LISTAME LOS SEMINARIOS!</string>
 
     //Strings para login
