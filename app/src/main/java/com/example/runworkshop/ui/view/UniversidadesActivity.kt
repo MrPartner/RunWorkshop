@@ -11,17 +11,19 @@ import com.example.runworkshop.data.model.network.UniversidadApiClient
 import com.example.runworkshop.databinding.ActivityUniversidadesBinding
 import com.example.runworkshop.di.NetworkModule.provideUniversidadApiClient
 import com.example.runworkshop.ui.view.recyclerviews.UniversidadAdapter
+import com.google.android.gms.ads.AdRequest
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import retrofit2.Retrofit
+
 @AndroidEntryPoint
 class UniversidadesActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUniversidadesBinding
-    private lateinit var api:UniversidadApiClient
+    private lateinit var api: UniversidadApiClient
     private lateinit var adapter: UniversidadAdapter
     private lateinit var retrofit: Retrofit
 
@@ -36,6 +38,7 @@ class UniversidadesActivity : AppCompatActivity() {
         retrofit = getRetrofit()
         api = provideUniversidadApiClient(retrofit)
 
+        initLoadAds()
         initUI()
     }
 
@@ -57,4 +60,10 @@ class UniversidadesActivity : AppCompatActivity() {
         binding.rvUniversidades.layoutManager = LinearLayoutManager(this)
         binding.rvUniversidades.adapter = adapter
     }
+
+    private fun initLoadAds() {
+        val adRequest = AdRequest.Builder().build()
+        binding.bannerUniversidades.loadAd(adRequest)
+    }
+
 }
