@@ -48,7 +48,12 @@ class InstitutosActivity : AppCompatActivity() {
 
         initLoadAds()
         initUI()
+
+        binding.btnAtras.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
+
 
     //Esta funcion nos hace el llamado al consumo de la API
     private fun initUI() {
@@ -75,7 +80,6 @@ class InstitutosActivity : AppCompatActivity() {
         binding.bannerInstitutos.loadAd(adRequest)
     }
 }
-
 
 
 //Como creamos un test de consumo con Log

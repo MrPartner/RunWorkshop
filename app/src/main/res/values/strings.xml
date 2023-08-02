@@ -10,6 +10,7 @@
     //Strings para Institutos
     <string name="btnMainActIns">INSTITUTOS</string>
     <string name="textInstitutos">LISTAME LOS SEMINARIOS!</string>
+    <string name="btnAtras">ATRAS</string>
 
 
     //Strings para universidades

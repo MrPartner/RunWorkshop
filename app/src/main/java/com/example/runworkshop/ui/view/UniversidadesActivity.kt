@@ -40,6 +40,10 @@ class UniversidadesActivity : AppCompatActivity() {
 
         initLoadAds()
         initUI()
+
+        binding.btnAtras.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun initUI() {

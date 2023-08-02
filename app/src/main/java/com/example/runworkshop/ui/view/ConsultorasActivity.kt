@@ -19,11 +19,12 @@ import kotlinx.coroutines.launch
 import retrofit2.Response
 import retrofit2.Retrofit
 
+
 @AndroidEntryPoint
 class ConsultorasActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityConsultorasBinding
-    private lateinit var api:ConsultoraApiClient
+    private lateinit var api: ConsultoraApiClient
     private lateinit var adapter: ConsultoraAdapter
     private lateinit var retrofit: Retrofit
 
@@ -40,6 +41,10 @@ class ConsultorasActivity : AppCompatActivity() {
 
         initLoadAds()
         initUI()
+
+        binding.btnAtras.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun initUI() {
