@@ -32,7 +32,7 @@
             android:id="@+id/tvDireccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="20sp"
             tools:text="direccion" />
 
@@ -40,7 +40,7 @@
             android:id="@+id/tvAudiencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="20sp"
             tools:text="Audiencia" />
 
@@ -48,7 +48,7 @@
             android:id="@+id/tvTaller"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="20sp"
             tools:text="taller" />
 
@@ -56,7 +56,7 @@
             android:id="@+id/tvDescripcion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="20sp"
             tools:text="descripcion" />
 
@@ -64,7 +64,7 @@
             android:id="@+id/tvCosto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="20sp"
             tools:text="costo" />
 
@@ -72,7 +72,7 @@
             android:id="@+id/tvFecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="20sp"
             tools:text="fecha" />
 
@@ -80,7 +80,7 @@
             android:id="@+id/tvHora"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="20sp"
             tools:text="hora" />
 

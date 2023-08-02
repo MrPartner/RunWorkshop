@@ -13,7 +13,7 @@
         android:id="@+id/btnConsultoras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="6dp"
         android:text="@string/textConsultoras"
         android:textColor="@color/grey"
         app:layout_constraintBottom_toTopOf="@+id/rvConsultoras"
@@ -35,11 +35,11 @@
         android:id="@+id/bannerConsultoras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rvConsultoras" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
