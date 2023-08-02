@@ -33,5 +33,9 @@
     <string name="tvAccedeCon">O accede con:</string>
     <string name="btnGoogle">GOOGLE</string>
 
+    //String para Main Activity
+    <string name="tvEmail">Email</string>
+    <string name="tvProvider">Proveedor</string>
+
 
 </resources>
