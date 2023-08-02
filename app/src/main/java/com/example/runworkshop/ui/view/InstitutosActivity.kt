@@ -11,6 +11,7 @@ import com.example.runworkshop.data.model.network.InstitutoApiClient
 import com.example.runworkshop.databinding.ActivityInstitutosBinding
 import com.example.runworkshop.di.NetworkModule.provideInstitutoApiClient
 import com.example.runworkshop.ui.view.recyclerviews.InstitutoAdapter
+import com.google.android.gms.ads.AdRequest
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -45,7 +46,7 @@ class InstitutosActivity : AppCompatActivity() {
 
         })*/
 
-
+        initLoadAds()
         initUI()
     }
 
@@ -68,7 +69,15 @@ class InstitutosActivity : AppCompatActivity() {
         binding.rvInstitutos.layoutManager = LinearLayoutManager(this)
         binding.rvInstitutos.adapter = adapter
     }
+
+    private fun initLoadAds() {
+        val adRequest = AdRequest.Builder().build()
+        binding.bannerInstitutos.loadAd(adRequest)
+    }
 }
+
+
+
 //Como creamos un test de consumo con Log
 /*
 //  if (myResponse.isSuccessful) {

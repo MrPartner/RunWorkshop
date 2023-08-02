@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnUniversidades.setOnClickListener { navigateToUniversidadesActivity() }
         binding.btnConsultoras.setOnClickListener { navigateToConsultorasActivity() }
 
-        initiLoadAds()
+        initLoadAds()
 
     }
 
@@ -72,9 +72,9 @@ class MainActivity : AppCompatActivity() {
         GOOGLE
     }
 
-    private fun initiLoadAds() {
+    private fun initLoadAds() {
         val adRequest = AdRequest.Builder().build()
-        binding.banner.loadAd(adRequest)
+        binding.bannerPrimero.loadAd(adRequest)
     }
 
 }
