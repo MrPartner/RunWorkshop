@@ -7,6 +7,7 @@ import android.os.Bundle
 import com.example.runworkshop.R
 import com.example.runworkshop.databinding.ActivityMainBinding
 import com.example.runworkshop.ui.view.auths.AuthActivity
+import com.google.android.gms.ads.AdRequest
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,6 +32,8 @@ class MainActivity : AppCompatActivity() {
         binding.btnInstitutos.setOnClickListener { navigateToInstitutosActivity() }
         binding.btnUniversidades.setOnClickListener { navigateToUniversidadesActivity() }
         binding.btnConsultoras.setOnClickListener { navigateToConsultorasActivity() }
+
+        initiLoadAds()
 
     }
 
@@ -67,6 +70,11 @@ class MainActivity : AppCompatActivity() {
     enum class ProviderType{
         BASIC,
         GOOGLE
+    }
+
+    private fun initiLoadAds() {
+        val adRequest = AdRequest.Builder().build()
+        binding.banner.loadAd(adRequest)
     }
 
 }
