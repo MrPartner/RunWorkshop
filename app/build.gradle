@@ -95,5 +95,7 @@ dependencies {
     ksp 'androidx.room:room-compiler:2.5.0'
     implementation("androidx.room:room-ktx:2.5.2")
     testImplementation("androidx.room:room-testing:2.5.2")
+    //AdMob Banner
+    implementation 'com.google.android.gms:play-services-ads:22.2.0'
 
 }
