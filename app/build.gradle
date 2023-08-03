@@ -65,11 +65,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    // ViewModel
+    //ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
-    // LiveData
+    //LiveData
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
-    // Activity
+    //Activity
     implementation "androidx.activity:activity-ktx:1.7.2"
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
@@ -84,6 +84,8 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.android.gms:play-services-auth:20.6.0")
+    //Facebook Login
+    implementation 'com.facebook.android:facebook-login:latest.release'
     //Datastore
     implementation "androidx.datastore:datastore-preferences-android:1.1.0-alpha04"
     //Dagger Hilt

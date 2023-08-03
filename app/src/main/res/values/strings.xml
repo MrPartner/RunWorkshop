@@ -1,30 +1,29 @@
 <resources>
     <string name="app_name">RunWorkshop</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    //sharedpreferences
+    <!-- sharedpreferences -->
     <string name="prefs_file">com.example.runworkshop.PREFERENCE_FILE_KEY</string>
 
-
-    //Strings para Institutos
+    <!--Strings para Institutos -->
     <string name="btnMainActIns">INSTITUTOS</string>
     <string name="textInstitutos">LISTAME LOS SEMINARIOS!</string>
     <string name="btnAtras">ATRAS</string>
 
-
-    //Strings para universidades
+    <!-- Strings para universidades -->
     <string name="btnMainActUni">UNIVERSIDADES</string>
     <string name="textUniversidades">LISTAME LOS SEMINARIOS!</string>
 
-    //Strings para consultoras
+    /<!-- Strings para consultoras -->
     <string name="btnMainActCon">CAPACITACION/COACH</string>
     <string name="textConsultoras">LISTAME LOS SEMINARIOS!</string>
 
-    //Strings para login
+    <!-- Strings para login -->
     <string name="etEmail">Email</string>
     <string name="etPassword">Password</string>
     <string name="btnSignUp">Registrar</string>
@@ -38,9 +37,16 @@
     <string name="btnGoogle">GOOGLE</string>
     <string name="btnFacebook">FACEBOOK</string>
 
-    //String para Main Activity
+    <!-- String para Main Activity -->
     <string name="tvEmail">Email</string>
     <string name="tvProvider">Proveedor</string>
+
+    <!-- String para LoginFacebook -->
+    <string name="facebook_app_id">1366342747598859</string>
+    <string name="fb_login_protocol_scheme">fb1366342747598859</string>
+    <string name="facebook_client_token">56789</string>
+
+
 
 
 </resources>

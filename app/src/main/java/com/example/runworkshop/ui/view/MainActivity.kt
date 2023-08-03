@@ -8,6 +8,7 @@ import android.os.Bundle
 import com.example.runworkshop.R
 import com.example.runworkshop.databinding.ActivityMainBinding
 import com.example.runworkshop.ui.view.auths.AuthActivity
+import com.facebook.login.LoginManager
 import com.google.android.gms.ads.AdRequest
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
@@ -53,6 +54,10 @@ class MainActivity : AppCompatActivity() {
             val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
             prefs.clear()
             prefs.apply()
+
+            if(provider == ProviderType.FACEBOOK.name){
+                LoginManager.getInstance().logOut()
+            }
 
             FirebaseAuth.getInstance().signOut()
             navigateToAuthActivity()
