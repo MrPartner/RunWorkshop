@@ -1,8 +1,10 @@
 package com.example.runworkshop.ui.view.auths
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import com.example.runworkshop.R
 import com.example.runworkshop.databinding.ActivityAuthBinding
@@ -35,6 +37,26 @@ class AuthActivity : AppCompatActivity() {
         //llamamos a la funcion setup
         setup()
 
+        //SharedPreferences
+        session()
+    }
+
+    //Sharedpreferences
+    override fun onStart() {
+        super.onStart()
+        binding.constraintAuth.visibility = View.VISIBLE
+    }
+
+    //Sharedpreferences
+    private fun session() {
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
+        val email = prefs.getString("email", null)
+        val provider = prefs.getString("provider", null)
+
+        if (email != null && provider != null) {
+            binding.constraintAuth.visibility = View.INVISIBLE
+            navigateToMainActivity(email, MainActivity.ProviderType.valueOf(provider))
+        }
     }
 
     //funcion de autenticacion

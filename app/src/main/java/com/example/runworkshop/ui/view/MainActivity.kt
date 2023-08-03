@@ -1,5 +1,6 @@
 package com.example.runworkshop.ui.view
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -33,6 +34,12 @@ class MainActivity : AppCompatActivity() {
         binding.btnUniversidades.setOnClickListener { navigateToUniversidadesActivity() }
         binding.btnConsultoras.setOnClickListener { navigateToConsultorasActivity() }
 
+        //guardar datos sharedpreferences
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
+        prefs.putString("email", email)
+        prefs.putString("provider", provider)
+        prefs.apply()
+
         initLoadAds()
     }
 
@@ -41,6 +48,12 @@ class MainActivity : AppCompatActivity() {
         binding.tvEmail.text = email
         binding.tvProvider.text = provider
         binding.btnCerrarSesion.setOnClickListener {
+
+            //borrado de datos
+            val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
+            prefs.clear()
+            prefs.apply()
+
             FirebaseAuth.getInstance().signOut()
             navigateToAuthActivity()
         }

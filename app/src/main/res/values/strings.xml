@@ -6,6 +6,9 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    //sharedpreferences
+    <string name="prefs_file">com.example.runworkshop.PREFERENCE_FILE_KEY</string>
+
 
     //Strings para Institutos
     <string name="btnMainActIns">INSTITUTOS</string>
