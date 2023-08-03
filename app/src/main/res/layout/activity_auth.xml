@@ -76,7 +76,7 @@
 
     <Button
         android:id="@+id/btnGoogle"
-        android:layout_width="140dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/invis"
@@ -85,6 +85,20 @@
         android:text="@string/btnGoogle"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnFacebook"
+        app:layout_constraintTop_toBottomOf="@+id/tvAccedeCon" />
+
+    <Button
+        android:id="@+id/btnFacebook"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/invis"
+        android:drawableLeft="@drawable/facebook_20"
+        android:minHeight="48dp"
+        android:text="@string/btnFacebook"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/btnGoogle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAccedeCon" />
 

@@ -12,6 +12,7 @@ class SplashActivity : AppCompatActivity() {
         // Initialize Firebase
         FirebaseApp.initializeApp(this)
 
+        //no olvidar sacar este metodo en produccion!
         Thread.sleep(2000)
 
         super.onCreate(savedInstanceState)

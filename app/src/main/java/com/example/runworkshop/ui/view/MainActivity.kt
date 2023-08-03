@@ -81,7 +81,8 @@ class MainActivity : AppCompatActivity() {
 
     enum class ProviderType{
         BASIC,
-        GOOGLE
+        GOOGLE,
+        FACEBOOK
     }
 
     private fun initLoadAds() {
