@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
         binding.btnConsultoras.setOnClickListener { navigateToConsultorasActivity() }
 
         initLoadAds()
-
     }
 
     private fun setup(email: String, provider: String) {
