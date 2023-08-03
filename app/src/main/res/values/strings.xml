@@ -44,7 +44,8 @@
     <!-- String para LoginFacebook -->
     <string name="facebook_app_id">1366342747598859</string>
     <string name="fb_login_protocol_scheme">fb1366342747598859</string>
-    <string name="facebook_client_token">56789</string>
+    <string name="facebook_client_token">3bbfcab90000076212626dc1b146ca3f</string>
+
 
 
 
