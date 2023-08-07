@@ -9,5 +9,7 @@ plugins {
     id 'com.google.dagger.hilt.android' version '2.47' apply false
     //Firebase
     id 'com.google.gms.google-services' version '4.3.15' apply false
+    // Add the dependency for the Crashlytics Gradle plugin
+    id("com.google.firebase.crashlytics") version "2.9.8" apply false
 
 }
