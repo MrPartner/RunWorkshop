@@ -23,6 +23,7 @@ import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import dagger.hilt.android.AndroidEntryPoint
+import java.lang.RuntimeException
 
 @AndroidEntryPoint
 class AuthActivity : AppCompatActivity() {
@@ -136,6 +137,14 @@ class AuthActivity : AppCompatActivity() {
                 }
             })
         }
+
+        /*
+        //metodo para el error de prueba de crashlytics
+        binding.btnError.setOnClickListener {
+            //forzado error
+            throw RuntimeException("Forzado de error")
+        }*/
+
     }
 
     //Funcion para el login de google
