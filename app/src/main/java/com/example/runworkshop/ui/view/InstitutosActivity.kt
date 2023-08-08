@@ -12,6 +12,9 @@ import com.example.runworkshop.databinding.ActivityInstitutosBinding
 import com.example.runworkshop.di.NetworkModule.provideInstitutoApiClient
 import com.example.runworkshop.ui.view.recyclerviews.InstitutoAdapter
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -27,6 +30,10 @@ class InstitutosActivity : AppCompatActivity() {
     private lateinit var retrofit: Retrofit
     private lateinit var api: InstitutoApiClient
 
+    //Interstitial
+    private var counter: Int = 0
+    private var interstitial: InterstitialAd? = null
+
     //private val institutoViewModel : InstitutoViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,19 +48,25 @@ class InstitutosActivity : AppCompatActivity() {
 
         //institutoViewModel.onCreate()
 
-
         /*institutoViewModel.institutoModel.observe(this, Observer {
 
         })*/
 
+        //iniciamos Banner
         initLoadAds()
+
+        //iniciamos Interstitial
+        initInterstitial()
+
         initUI()
 
+        //Atras/Interstitial
         binding.btnAtras.setOnClickListener {
+            counter += 1
+            checkCounter()
             onBackPressedDispatcher.onBackPressed()
         }
     }
-
 
     //Esta funcion nos hace el llamado al consumo de la API
     private fun initUI() {
@@ -75,25 +88,39 @@ class InstitutosActivity : AppCompatActivity() {
         binding.rvInstitutos.adapter = adapter
     }
 
+    //iniciamos Banner
     private fun initLoadAds() {
         val adRequest = AdRequest.Builder().build()
         binding.bannerInstitutos.loadAd(adRequest)
     }
+
+    //iniciamos interstitial
+    private fun initInterstitial() {
+        var adRequest = AdRequest.Builder().build()
+        InterstitialAd.load(this, "ca-app-pub-3940256099942544/1033173712", adRequest,
+            object : InterstitialAdLoadCallback() {
+                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                    interstitial = interstitialAd
+                }
+
+                override fun onAdFailedToLoad(p0: LoadAdError) {
+                    interstitial = null
+                }
+            })
+    }
+
+    //Interstitial
+    private fun checkCounter() {
+        if (counter == 2) {
+            showInterstitial()
+            counter = 0
+            initInterstitial()
+        }
+    }
+
+    //Interstitial
+    private fun showInterstitial() {
+        interstitial?.show(this)
+    }
+
 }
-
-
-//Como creamos un test de consumo con Log
-/*
-//  if (myResponse.isSuccessful) {
-                 //   Log.i("DanielParada", "funciona :D")
-                    val response = myResponse.body()
-                    if(response != null){
-                     //   Log.i("DanielParada", response.toString())
-                        runOnUiThread {
-                            adapter.updateList(response)
-                        }
-                    }
-             //   } else {
-                  //  Log.i("DanielParada", "No funciona :(")
-              //  }
- */
