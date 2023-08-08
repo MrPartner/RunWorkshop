@@ -1,5 +1,6 @@
 package com.example.runworkshop.ui.view
 
+import android.content.SharedPreferences
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -31,6 +32,7 @@ class InstitutosActivity : AppCompatActivity() {
     private lateinit var api: InstitutoApiClient
 
     //Interstitial
+    private lateinit var preferences: SharedPreferences
     private var counter: Int = 0
     private var interstitial: InterstitialAd? = null
 
@@ -60,12 +62,29 @@ class InstitutosActivity : AppCompatActivity() {
 
         initUI()
 
+        //sharedPreferences Interstitial
+        preferences = getSharedPreferences("counter_prefs", MODE_PRIVATE)
+        counter = preferences.getInt("counter", 0)
+
         //Atras/Interstitial
         binding.btnAtras.setOnClickListener {
             counter += 1
             checkCounter()
             onBackPressedDispatcher.onBackPressed()
         }
+    }
+
+    //sharedPreferences Interstitial
+    override fun onPause() {
+        super.onPause()
+        val editor = preferences.edit()
+        editor.putInt("counter", counter)
+        editor.apply()
+    }
+    //sharedPreferences Interstitial
+    override fun onResume() {
+        super.onResume()
+        counter = preferences.getInt("counter", 1)
     }
 
     //Esta funcion nos hace el llamado al consumo de la API
