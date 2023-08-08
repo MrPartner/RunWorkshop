@@ -1,5 +1,6 @@
 package com.example.runworkshop.ui.view
 
+import android.content.SharedPreferences
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,9 @@ import com.example.runworkshop.databinding.ActivityConsultorasBinding
 import com.example.runworkshop.di.NetworkModule.provideConsultoraApiClient
 import com.example.runworkshop.ui.view.recyclerviews.ConsultoraAdapter
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -28,6 +32,11 @@ class ConsultorasActivity : AppCompatActivity() {
     private lateinit var adapter: ConsultoraAdapter
     private lateinit var retrofit: Retrofit
 
+    //Interstitial
+    private lateinit var preferences: SharedPreferences
+    private var counter: Int = 0
+    private var interstitial: InterstitialAd? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,14 +48,40 @@ class ConsultorasActivity : AppCompatActivity() {
         retrofit = getRetrofit()
         api = provideConsultoraApiClient(retrofit)
 
+        //iniciamos Banner
         initLoadAds()
+
+        //iniciamos Interstitial
+        initInterstitial()
+
         initUI()
 
+        //sharedPreferences Interstitial
+        preferences = getSharedPreferences("counter_prefs", MODE_PRIVATE)
+        counter = preferences.getInt("counter", 0)
+
+        //Atras/Interstitial
         binding.btnAtras.setOnClickListener {
+            counter += 1
+            checkCounter()
             onBackPressedDispatcher.onBackPressed()
         }
     }
 
+    //sharedPreferences Interstitial
+    override fun onPause() {
+        super.onPause()
+        val editor = preferences.edit()
+        editor.putInt("counter", counter)
+        editor.apply()
+    }
+    //sharedPreferences Interstitial
+    override fun onResume() {
+        super.onResume()
+        counter = preferences.getInt("counter", 1)
+    }
+
+    //Esta funcion nos hace el llamado al consumo de la API
     private fun initUI() {
         binding.btnConsultoras.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
@@ -67,9 +102,39 @@ class ConsultorasActivity : AppCompatActivity() {
         binding.rvConsultoras.adapter = adapter
     }
 
+    //iniciamos Banner
     private fun initLoadAds() {
         val adRequest = AdRequest.Builder().build()
         binding.bannerConsultoras.loadAd(adRequest)
+    }
+
+    //iniciamos interstitial
+    private fun initInterstitial() {
+        var adRequest = AdRequest.Builder().build()
+        InterstitialAd.load(this, "ca-app-pub-3940256099942544/1033173712", adRequest,
+            object : InterstitialAdLoadCallback() {
+                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                    interstitial = interstitialAd
+                }
+
+                override fun onAdFailedToLoad(p0: LoadAdError) {
+                    interstitial = null
+                }
+            })
+    }
+
+    //Interstitial
+    private fun checkCounter() {
+        if (counter == 2) {
+            showInterstitial()
+            counter = 0
+            initInterstitial()
+        }
+    }
+
+    //Interstitial
+    private fun showInterstitial() {
+        interstitial?.show(this)
     }
 
 }
