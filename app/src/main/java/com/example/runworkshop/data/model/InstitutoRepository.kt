@@ -31,4 +31,6 @@ class InstitutoRepository @Inject constructor(
     suspend fun clearInstitutos(){
         institutoDao.deleteAllInstitutos()
     }
+
+
 }

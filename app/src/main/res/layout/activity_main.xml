@@ -55,6 +55,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnUniversidades" />
 
+    <Button
+        android:id="@+id/btnTerminos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintBottom_toTopOf="@+id/tvEmail"
+        android:backgroundTint="@color/white"
+        android:text="@string/btnTerminos"
+        android:textColor="@color/black"
+        android:layout_marginVertical="8dp"/>
+
     <TextView
         android:id="@+id/tvEmail"
         android:layout_width="match_parent"

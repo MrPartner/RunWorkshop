@@ -40,13 +40,86 @@
     <!-- String para Main Activity -->
     <string name="tvEmail">Email</string>
     <string name="tvProvider">Proveedor</string>
+    <string name="btnTerminos">TERMINOS Y CONDICIONES</string>
 
     <!-- String para LoginFacebook -->
     <string name="facebook_app_id">1366342747598859</string>
     <string name="fb_login_protocol_scheme">fb1366342747598859</string>
     <string name="facebook_client_token">3bbfcab90000076212626dc1b146ca3f</string>
 
-
+    <!--Strings para Terminos & Condiciones -->
+    <string name="tvTitle">TERMINOS Y CONDICIONES</string>
+    <string name="tvTerminos">El presente contrato describe los términos y condiciones aplicables al uso
+del contenido, productos y/o servicios del sitio web RunWorkshop® del cual es titular
+RunWorkshop Team ®. Para hacer uso del contenido, productos y/o servicios del sitio web
+el usuario deberá sujetarse a los presentes términos y condiciones.
+I. OBJETO
+El objeto es regular el acceso y utilización del contenido, productos y/o servicios a disposición del
+público en general en el dominio https://www.runworkshop.com
+El titular se reserva el derecho de realizar cualquier tipo de modificación en el sitio web en
+cualquier momento y sin previo aviso, el usuario acepta dichas modificaciones.
+El acceso al sitio web por parte del usuario es libre y gratuito, la utilización del contenido,
+productos y/o servicios no implica un costo de suscripción para el usuario.
+El sitio web solo admite el acceso a personas mayores de edad y no se hace responsable por el
+incumplimiento de esto.
+El sitio web está dirigido a usuarios residentes en Bolivia y cumple con la legislación establecida
+en dicho país, si el usuario reside en otro país y decide acceder al sitio web lo hará bajo su
+responsabilidad.
+La administración del sitio web puede ejercerse por terceros, es decir, personas distintas al
+titular, sin afectar esto los presentes términos y condiciones.
+II. USUARIO
+La actividad del usuario en el sitio web como publicaciones o comentarios estarán sujetos a los
+presentes términos y condiciones. El usuario se compromete a utilizar el contenido, productos y/o
+servicios de forma lícita, sin faltar a la moral o al orden público, absteniéndose de realizar
+cualquier acto que afecte los derechos de terceros o el funcionamiento del sitio web.
+El usuario se compromete a proporcionar información verídica en los formularios del sitio web.
+El acceso al sitio web no supone una relación entre el usuario y el titular del sitio web.
+El usuario manifiesta ser mayor de edad y contar con la capacidad jurídica de acatar los presentes
+términos y condiciones.
+III. ACCESO Y NAVEGACIÓN EN EL SITIO WEB
+El titular no garantiza la continuidad y disponibilidad del contenido, productos y/o servicios en
+el sitito web, realizará acciones que fomenten el buen funcionamiento de dicho sitio web sin
+responsabilidad alguna.
+El titular no se responsabiliza de que el software esté libre de errores que puedan causar un daño
+al software y/o hardware del equipo del cual el usuario accede al sitio web. De igual forma, no se
+responsabiliza por los daños causados por el acceso y/o utilización del sitio web.
+IV. POLÍTICA DE PRIVACIDAD Y PROTECCIÓN DE DATOS
+El titular de compromete a tomar las medidas necesarias que garanticen la seguridad
+del usuario, evitando que se haga uso indebido de los datos personales que el usuario proporcione
+en el sitio web.
+El titular corroborará que los datos personales contenidos en las bases de datos sean correctos,
+verídicos y actuales, así como que se utilicen únicamente con el fin con el que fueron recabados.
+V. POLÍTICA DE ENLACES
+En el sitio web puede contener enlaces a otros sitios de internet pertenecientes a terceros
+de los cuales no se hace responsable.
+VI. POLÍTICA DE PROPIEDAD INTELECTUAL E INDUSTRIAL
+El titular manifiesta tener los derechos de propiedad intelectual e industrial del sitio web
+incluyendo imágenes, archivos de audio o video, logotipos, marcas, colores, estructuras,
+tipografías, diseños y demás elementos que lo distinguen, protegidos por la
+legislación Boliviana e internacional en materia de propiedad intelectual e industrial.
+El usuario se compromete a respetar los derechos de propiedad industrial e intelectual
+del titular, asi como de las diferentes instituciones educativas(previo acuerdo),
+pudiendo visualizar los elementos del sitio web, almacenarlos, copiarlos eimprimirlos exclusivamente
+para uso personal.
+VII. POLITICA DE PAGOS Y FACTURACION
+El titular maniefiesta que todo el uso del sitio web es de forma gratuita.
+Ningun miembro del titular, asi como usuarios o personas particulares puede realizar cobros,
+venta de servicios o productos a nombre del titular, dado que actualemnte el servicio es totalmente
+gratis, por ende seria un cobro irregular e ilegal, lo cual se recomienda total precaucion,
+asi como la necesidad de informar al titular sobre los posibles casos enunciados.
+VIII. POLITICA DE CONTENIDO Y SERVICIOS
+El titular no se hace responsable en los siguientes casos(nombrando de "terceros" en este inciso
+a los diferentes establecimientos y entidades educativas que presenten un taller en cuestion):
+a) Robo o perdidas materiales ocurridos en el establecimiento de terceros.
+b) El disertante llega en una hora no establecida o simplemente no se presenta al taller en cuestion.
+c) Accidentes que se puedan suscitar en el establecimiento de terceros.
+d) El establecimiento de terceros no cumpla con normas de higiene y seguridad.
+e) En caso de que terceros decida cambiar el precio del taller, la fecha y/o la hora del mismo.
+IX. LEGISLACIÓN Y JURISDICCIÓN APLICABLE
+La relación entre el usuario y el titular se regirá por las legislaciones aplicables en Bolivia.
+RunWorkshop® no se responsabiliza por la indebida utilización del contenido, productos y/o servicios
+del sitio web y del incumplimiento de los presentes términos y condiciones.</string>
+    <string name="btnAceptar">ACEPTAR Y VOLVER</string>
 
 
 
