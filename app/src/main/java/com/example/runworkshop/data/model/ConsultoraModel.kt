@@ -1,8 +1,9 @@
 package com.example.runworkshop.data.model
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
-data class ConsultoraModel(
+@Keep data class ConsultoraModel(
     @SerializedName("consultora") val consultora: String,
     @SerializedName("direccion") val direccion: String,
     @SerializedName("audiencia") val audiencia: String,
