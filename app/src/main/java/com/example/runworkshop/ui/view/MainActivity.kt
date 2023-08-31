@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnUniversidades.setOnClickListener { navigateToUniversidadesActivity() }
         binding.btnConsultoras.setOnClickListener { navigateToConsultorasActivity() }
         binding.btnTerminos.setOnClickListener { navigateToTerminosCondicionesActivity() }
+        binding.btnContact.setOnClickListener { navigateToContactActivity() }
 
         //guardar datos sharedpreferences
         val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
@@ -87,6 +88,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateToTerminosCondicionesActivity() {
         val intent = Intent(this, TerminosCondicionesActivity::class.java)
+        startActivity(intent)
+    }
+    
+    private fun navigateToContactActivity(){
+        val intent = Intent(this, ContactActivity::class.java)
         startActivity(intent)
     }
 

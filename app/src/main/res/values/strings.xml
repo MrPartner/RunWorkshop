@@ -41,6 +41,23 @@
     <string name="tvEmail">Email</string>
     <string name="tvProvider">Proveedor</string>
     <string name="btnTerminos">TERMINOS Y CONDICIONES</string>
+    <string name="btnContact">Contacto</string>
+
+    <!-- String para Contact Activity -->
+    <string name="tvContactTitle">RunWorkshop®</string>
+    <string name="tvTelfNumber">+591–71371737</string>
+    <string name="tvFbDir">www.facebook.com/runworkshop</string>
+    <string name="tvInstaDir">Instagram/runworkshop</string>
+    <string name="tvWebDir">https://runworkshop.com</string>
+    <string name="tvEmailDIr">developmentpartner@runworkshop.com</string>
+    <string name="tvAcercaDe">Acerca De:</string>
+    <string name="btnContactAtras">Atras</string>
+    <string name="tvAcercaDeContenido">RunWorkshop® es una startup que nace con el proposito
+    de organizar y difundir a la comunidad profesional y estudiantil todos los talleres y seminarios
+    que tengamos a nuestra disposicion bajo previo acuerdo con las diferentes instituciones educativas,
+    como ser institutos, universidades, consultoras, colegios de profesionales, coaching, etc.; Ya
+    que compartimos el lema de que la educacion es la unica arma que podemos usar para cambiar
+    el mundo.</string>
 
     <!-- String para LoginFacebook -->
     <string name="facebook_app_id">1366342747598859</string>

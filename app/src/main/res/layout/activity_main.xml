@@ -56,6 +56,19 @@
         app:layout_constraintTop_toBottomOf="@+id/btnUniversidades" />
 
     <Button
+        android:id="@+id/btnContact"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintBottom_toTopOf="@+id/btnTerminos"
+        android:layout_marginStart="16dp"
+        android:text="@string/btnContact"
+        android:textColor="@color/grey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+    <Button
         android:id="@+id/btnTerminos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

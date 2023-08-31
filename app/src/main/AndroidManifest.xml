@@ -17,6 +17,9 @@
         android:theme="@style/Theme.RunWorkshop"
         tools:targetApi="31">
         <activity
+            android:name=".ui.view.ContactActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.view.TerminosCondicionesActivity"
             android:exported="false" />
         <activity

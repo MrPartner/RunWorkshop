@@ -13,7 +13,7 @@ class SplashActivity : AppCompatActivity() {
         FirebaseApp.initializeApp(this)
 
         //no olvidar sacar este metodo en produccion!
-        Thread.sleep(2000)
+        //Thread.sleep(2000)
 
         super.onCreate(savedInstanceState)
         startActivity(Intent(this, AuthActivity::class.java))
