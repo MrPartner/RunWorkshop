@@ -46,8 +46,8 @@
     <!-- String para Contact Activity -->
     <string name="tvContactTitle">RunWorkshop®</string>
     <string name="tvTelfNumber">+591–71371737</string>
-    <string name="tvFbDir">www.facebook.com/runworkshop</string>
-    <string name="tvInstaDir">Instagram/runworkshop</string>
+    <string name="tvFbDir">facebook.com/runworkshop/</string>
+    <string name="tvInstaDir">instagram.com/instarunworkshop/</string>
     <string name="tvWebDir">https://runworkshop.com</string>
     <string name="tvEmailDIr">developmentpartner@runworkshop.com</string>
     <string name="tvAcercaDe">Acerca De:</string>
